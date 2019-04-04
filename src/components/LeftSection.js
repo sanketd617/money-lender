@@ -9,7 +9,7 @@ import Divider from "@material-ui/core/Divider";
 import withRouter from "react-router-dom/withRouter";
 import {connect} from "react-redux";
 
-const styles = theme => console.log(theme) || createStyles({
+const styles = theme => createStyles({
     root: {
         backgroundColor: theme.palette.primary.main,
         color: "#ffffff",

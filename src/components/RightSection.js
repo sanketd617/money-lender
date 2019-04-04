@@ -2,7 +2,9 @@ import React from "react";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles from "@material-ui/core/styles/withStyles";
 import {Route} from "react-router-dom";
-import Predictor from "../containers/Predictor";
+import Predictor from "./Predictor";
+import Application from "./Application";
+import withWidth from "@material-ui/core/withWidth";
 
 const styles = theme => createStyles({
     root: {
@@ -14,12 +16,12 @@ const RightSection = (props) => {
     const {classes} = props;
     return (
         <div className={classes.root}>
-            <Route path="/predict" exact component={Predictor} />
-            <Route path="/apply" component={null} />
+            <Route path="/predict" exact component={Predictor} width={props.width}/>
+            <Route path="/apply" component={Application} />
             <Route path="/loans" component={null} />
         </div>
     );
 };
 
 
-export default withStyles(styles)(RightSection);
+export default withWidth()(withStyles(styles)(RightSection));

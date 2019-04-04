@@ -8,7 +8,12 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = theme => createStyles({
     root: {
-        padding: 70
+        padding: 70,
+        [theme.breakpoints.down('sm')]: {
+            padding: "10% 0%",
+            width: "80%",
+            position: "absolute"
+        }
     },
     progressLoanAmount: {
         color: theme.palette.primary.light,

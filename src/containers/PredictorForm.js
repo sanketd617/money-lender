@@ -6,17 +6,24 @@ import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles from "@material-ui/core/styles/withStyles";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import ToggleButton from "@material-ui/lab/ToggleButton";
-import CarIcon from "@material-ui/icons/DirectionsCar";
-import HomeIcon from "@material-ui/icons/Home";
-import EducationIcon from "@material-ui/icons/School";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import {withRouter} from "react-router-dom";
 import {changeLoanType, changeModel, getInterest} from "../actions/PredictorActions";
-import CircularGraph from "./CircularGraph";
+import CircularGraph from "../components/CircularGraph";
+import Hidden from "@material-ui/core/Hidden";
 const styles = theme => createStyles({
+    root: {
+
+    },
     controls: {
-        padding: 70
+        padding: 70,
+        [theme.breakpoints.down('sm')]: {
+            padding: "5% 0%",
+            width: "80%",
+            position: "absolute",
+            top: "120vw"
+        }
     },
     toggleContainer: {
         height: 56,
@@ -26,6 +33,9 @@ const styles = theme => createStyles({
         justifyContent: 'flex-start',
         margin: `${theme.spacing.unit}px 0`,
         background: theme.palette.background.default,
+        [theme.breakpoints.down('sm')]: {
+            padding: `0 ${theme.spacing.unit}px`,
+        }
     },
     toggleButton: {
         padding: 10,
@@ -53,8 +63,19 @@ class PredictorForm extends React.Component {
         const {classes} = this.props;
         return (
             <div>
-                <Grid container>
-                    <Grid item sm className={classes.controls}>
+                <Grid container className={classes.root}>
+                    <Hidden mdUp>
+                        <Grid item sm={12}>
+                            <CircularGraph
+                                loanType={this.props.values.loanType}
+                                loanAmount={this.props.values.loanAmount}
+                                termLength={this.props.values.termLength}
+                                interestRate={this.props.values.interestRate}
+                                monthlyPayment={this.props.values.monthlyPayment}
+                            />
+                        </Grid>
+                    </Hidden>
+                    <Grid item sm={12} md={6} className={classes.controls}>
                         <Typography variant="h6" className={classes.label}>
                             Loan Type
                         </Typography>
@@ -86,15 +107,17 @@ class PredictorForm extends React.Component {
                             </Button>
                         </div>
                     </Grid>
-                    <Grid item sm>
-                        <CircularGraph
-                            loanType={this.props.values.loanType}
-                            loanAmount={this.props.values.loanAmount}
-                            termLength={this.props.values.termLength}
-                            interestRate={this.props.values.interestRate}
-                            monthlyPayment={this.props.values.monthlyPayment}
-                        />
-                    </Grid>
+                    <Hidden smDown>
+                        <Grid item md>
+                            <CircularGraph
+                                loanType={this.props.values.loanType}
+                                loanAmount={this.props.values.loanAmount}
+                                termLength={this.props.values.termLength}
+                                interestRate={this.props.values.interestRate}
+                                monthlyPayment={this.props.values.monthlyPayment}
+                            />
+                        </Grid>
+                    </Hidden>
                 </Grid>
             </div>
         );

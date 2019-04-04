@@ -23,8 +23,8 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <Fragment>
             <Grid container>
-              <Hidden smDown>
-                <Grid item sm={4}>
+              <Hidden mdDown>
+                <Grid item xl={4} lg={3}>
                   <LeftSection/>
                 </Grid>
               </Hidden>
