@@ -8,6 +8,8 @@ import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import blue from "@material-ui/core/es/colors/blue";
 import {connect} from "react-redux";
+import withStyles from "@material-ui/core/styles/withStyles";
+import createStyles from "@material-ui/core/styles/createStyles";
 
 const theme = createMuiTheme({
   palette: {
@@ -16,13 +18,19 @@ const theme = createMuiTheme({
   typography: { useNextVariants: true },
 });
 
+const styles = theme => createStyles({
+    container: {
+
+    }
+});
 
 class App extends Component {
   render() {
+      const {classes} = this.props;
     return (
         <MuiThemeProvider theme={theme}>
           <Fragment>
-            <Grid container>
+            <Grid container className={classes.container}>
               <Hidden mdDown>
                 <Grid item xl={4} lg={3}>
                   <LeftSection/>
@@ -50,4 +58,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(App));
