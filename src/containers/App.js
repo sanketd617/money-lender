@@ -11,7 +11,7 @@ import {connect} from "react-redux";
 
 const theme = createMuiTheme({
   palette: {
-    primary: { main: blue[500] },
+    primary: { main: blue[500], light: blue[100] },
   },
   typography: { useNextVariants: true },
 });
