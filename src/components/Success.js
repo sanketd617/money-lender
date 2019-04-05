@@ -21,8 +21,8 @@ const Success = props => {
             <div>
                 <br/>
                 <br/>
-                <Button variant="contained" color="primary" onClick={() => props.history.push("/loans")}>
-                    view
+                <Button variant="contained" color="primary" onClick={() => props.history.push("/")}>
+                    Home
                 </Button>
             </div>
         </div>

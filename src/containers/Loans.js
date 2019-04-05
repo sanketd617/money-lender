@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles from "@material-ui/core/styles/withStyles";
+import Typography from "@material-ui/core/es/Typography/Typography";
 
 const styles = theme => createStyles({
     root: {
@@ -17,7 +18,9 @@ class Loans extends React.Component {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-                This page is not implemented
+                <Typography variant="h4">
+                    Unimplemented page
+                </Typography>
             </div>
         );
     }

@@ -39,10 +39,14 @@ const styles = theme => createStyles({
         height: "100%",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        transform: "scale(1.3)",
+        [theme.breakpoints.down('md')]: {
+            transform: "scale(1.0)"
+        }
     },
     content: {
-        padding: 10
+        padding: 10,
     },
     monthlyPayment: {
         width: "100%",
@@ -60,7 +64,7 @@ const styles = theme => createStyles({
     },
     bold: {
         fontWeight: "bold"
-    }
+    },
 });
 
 const CircularGraph = props => {
@@ -68,7 +72,7 @@ const CircularGraph = props => {
     const progress = 100*(props.monthlyPayment*props.termLength - props.loanAmount)/(props.monthlyPayment*props.termLength);
     return (
         <div className={classes.root}>
-            <div style={{position: "relative"}}>
+            <div style={{position: "relative"}} className={classes.circle}>
                 <CircularProgress
                     className={classes.progressLoanAmount}
                     variant="static"
@@ -83,9 +87,6 @@ const CircularGraph = props => {
                     size={"104%"}
                     thickness={3}
                 />
-                {/*<div className={classes.loanType}>*/}
-                    {/*<Icon className={classes.icon}>{props.loanType.icon}</Icon>*/}
-                {/*</div>*/}
                 <div className={classes.loanAmount}>
                     {
                         props.interestRate ?
@@ -94,7 +95,7 @@ const CircularGraph = props => {
                                     <Icon className={classes.icon}>{props.loanType.icon}</Icon>
                                 </div>
                                 <div className={classes.content}>
-                                    <Typography variant="display2">
+                                    <Typography variant="h5">
                                         {"$ "+props.monthlyPayment*props.termLength }
                                     </Typography>
                                     <Typography variant="subtitle1" align={"center"}>
