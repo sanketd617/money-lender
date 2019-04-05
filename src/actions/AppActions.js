@@ -6,3 +6,10 @@ export function finishLoading(){
     }
 }
 
+export function toggleDrawer(){
+    return {
+        type: "APP_DRAWER_TOGGLED",
+        payload: null
+    }
+}
+

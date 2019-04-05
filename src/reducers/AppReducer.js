@@ -1,6 +1,7 @@
 const defaultState = {
     isLoading: true,
-    currentPath: "/"
+    currentPath: "/",
+    isDrawerOpened: false
 };
 
 
@@ -10,6 +11,13 @@ const AppReducer = (state = defaultState, action) => {
             state = {
                 ...state,
                 isLoading: false
+            };
+            break;
+        case "APP_DRAWER_TOGGLED":
+            console.log("lskj")
+            state = {
+                ...state,
+                isDrawerOpened: !state.isDrawerOpened
             };
             break;
         default:

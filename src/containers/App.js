@@ -10,6 +10,7 @@ import blue from "@material-ui/core/es/colors/blue";
 import {connect} from "react-redux";
 import withStyles from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
+import {toggleDrawer} from "../actions/AppActions";
 
 const theme = createMuiTheme({
   palette: {
@@ -37,7 +38,7 @@ class App extends Component {
                 </Grid>
               </Hidden>
               <Grid item sm>
-                <RightSection/>
+                <RightSection isDrawerOpen={this.props.isDrawerOpen} toggleDrawer={this.props.toggleDrawer}/>
               </Grid>
             </Grid>
           </Fragment>
@@ -48,13 +49,16 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
           return {
-            isLoading: state.app.isLoading
+            isLoading: state.app.isLoading,
+              isDrawerOpen: state.app.isDrawerOpened
           }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+      toggleDrawer: () => {
+          dispatch(toggleDrawer())
+      }
   }
 };
 
