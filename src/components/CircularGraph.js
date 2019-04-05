@@ -11,8 +11,8 @@ const styles = theme => createStyles({
         padding: 70,
         [theme.breakpoints.down('sm')]: {
             padding: "10% 0%",
-            width: "80%",
-            position: "absolute"
+            width: "90%",
+            position: "absolute",
         }
     },
     progressLoanAmount: {

@@ -20,7 +20,8 @@ const RightSection = (props) => {
         <div>
             <MobileHeader isOpen={props.isDrawerOpen} toggleDrawer={props.toggleDrawer}/>
             <div className={classes.root}>
-                <Route path="/predict" exact component={Predictor} width={props.width}/>
+                <Route path="/" exact component={Predictor} width={props.width}/>
+                <Route path="/predict" component={Predictor} width={props.width}/>
                 <Route path="/apply" component={Application} />
                 <Route path="/loans" component={Loans} />
             </div>

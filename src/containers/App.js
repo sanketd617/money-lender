@@ -37,7 +37,7 @@ class App extends Component {
                   <LeftSection/>
                 </Grid>
               </Hidden>
-              <Grid item sm>
+              <Grid item xs>
                 <RightSection isDrawerOpen={this.props.isDrawerOpen} toggleDrawer={this.props.toggleDrawer}/>
               </Grid>
             </Grid>

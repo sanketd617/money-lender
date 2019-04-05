@@ -21,9 +21,11 @@ const styles = theme => createStyles({
     controls: {
         padding: 70,
         [theme.breakpoints.down('sm')]: {
-            padding: "15px 0",
+            padding: "15px",
             position: "absolute",
-            top: "120vw"
+            top: "145vw",
+            left: 0,
+            width: "100vw"
         }
     },
     toggleContainer: {
@@ -36,7 +38,8 @@ const styles = theme => createStyles({
         background: theme.palette.background.default,
         [theme.breakpoints.down('sm')]: {
             padding: 0,
-            margin: 0
+            margin: 0,
+            width: "100%",
         }
     },
     toggleButton: {
@@ -66,18 +69,7 @@ class PredictorForm extends React.Component {
         return (
             <Fragment>
                 <Grid container className={classes.root} spacing={0}>
-                    <Hidden mdUp>
-                        <Grid item sm={12}>
-                            <CircularGraph
-                                loanType={this.props.values.loanType}
-                                loanAmount={this.props.values.loanAmount}
-                                termLength={this.props.values.termLength}
-                                interestRate={this.props.values.interestRate}
-                                monthlyPayment={this.props.values.monthlyPayment}
-                            />
-                        </Grid>
-                    </Hidden>
-                    <Grid item sm={12} md={6} className={classes.controls}>
+                    <Grid item xs={12} md={6} className={classes.controls}>
                         <Typography variant="h6" className={classes.label}>
                             Loan Type
                         </Typography>
@@ -109,17 +101,15 @@ class PredictorForm extends React.Component {
                             </Button>
                         </div>
                     </Grid>
-                    <Hidden smDown>
-                        <Grid item md>
-                            <CircularGraph
-                                loanType={this.props.values.loanType}
-                                loanAmount={this.props.values.loanAmount}
-                                termLength={this.props.values.termLength}
-                                interestRate={this.props.values.interestRate}
-                                monthlyPayment={this.props.values.monthlyPayment}
-                            />
-                        </Grid>
-                    </Hidden>
+                    <Grid item md>
+                        <CircularGraph
+                            loanType={this.props.values.loanType}
+                            loanAmount={this.props.values.loanAmount}
+                            termLength={this.props.values.termLength}
+                            interestRate={this.props.values.interestRate}
+                            monthlyPayment={this.props.values.monthlyPayment}
+                        />
+                    </Grid>
                 </Grid>
             </Fragment>
         );
