@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/money-lender/precache-manifest.86f1177920ff57f99413097f680e17c2.js"
+  "/money-lender/precache-manifest.7b4df771d6ccb13609316923e77addfb.js"
 );
 
 workbox.clientsClaim();

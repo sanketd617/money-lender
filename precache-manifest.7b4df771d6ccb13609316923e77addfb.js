@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "9635b21d3ca69022a811",
+    "revision": "08f68b62c3c310740f40",
     "url": "/money-lender/static/css/main.b1384af6.chunk.css"
   },
   {
-    "revision": "9635b21d3ca69022a811",
-    "url": "/money-lender/static/js/main.b4e8c83d.chunk.js"
+    "revision": "08f68b62c3c310740f40",
+    "url": "/money-lender/static/js/main.710a9d2a.chunk.js"
   },
   {
     "revision": "c91d85861008ae7dfa65",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/money-lender/static/js/2.2f3f7ed0.chunk.js"
   },
   {
-    "revision": "7cb8b1eb06d375490ed5f5d4e4b7b381",
+    "revision": "12db97b522da4fe59f3a214219d5e1a8",
     "url": "/money-lender/index.html"
   }
 ];
