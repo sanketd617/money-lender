@@ -1,7 +1,7 @@
 ## About
 
 This project is a UI for loan application using ReactJS.
-Click [here](http://3.89.93.88) to view the demo.
+Click [here](https://sanketd617.github.io/money-lender) to view the demo.
 
 ## How to apply for a loan?
 
